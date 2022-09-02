@@ -18,6 +18,8 @@ export default {
   name: "Home",
   components: {
     HelloWorld,
+  },created(){
+  this.viewValue()
   },
   data() {
     return {
