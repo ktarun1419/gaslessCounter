@@ -120,7 +120,7 @@ export default {
   methods: {
     send() {
       const biconomy = new Biconomy(window.ethereum, {
-        apiKey: "	f73059c0-259d-4b30-885e-d3150591e57c",
+        apiKey: "kNNyjxHhV.ffd8c6b1-f57d-44ec-8b90-c89e31c463ac",
         debug: true,
       });
       biconomy
