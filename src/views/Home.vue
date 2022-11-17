@@ -120,7 +120,7 @@ export default {
   methods: {
     send() {
       const biconomy = new Biconomy(window.ethereum, {
-        apiKey: "XhhterezE.bb28be9e-a06e-48fd-8986-d62c8223add9",
+        apiKey: "5673dd24-c118-4a3b-a4e1-f898e818bde0",
         debug: true,
       });
       biconomy
@@ -130,13 +130,13 @@ export default {
           //sending the transactions
           const contractInstance = new web3.eth.Contract(
             this.abiContract,
-            "0x9B0dcC366EE9ADa0BA20cD916E75CFA882A62867"
+            "0xF527e127440171A321AAcF9426Aef445c766314A"
           );
           web3.eth.getAccounts().then((result) => {
             let accountaddress = result[0];
             var tx = {
               from: accountaddress,
-              to: "0x9B0dcC366EE9ADa0BA20cD916E75CFA882A62867",
+              to: "0xF527e127440171A321AAcF9426Aef445c766314A",
               data: contractInstance.methods.setValue(this.value).encodeABI(),
             };
             web3.eth.sendTransaction(tx).then((result) => {
@@ -154,7 +154,7 @@ export default {
       const web3 = new Web3(window.ethereum);
       const contractInstance = new web3.eth.Contract(
         this.abiContract,
-        "0x9B0dcC366EE9ADa0BA20cD916E75CFA882A62867"
+        "0xF527e127440171A321AAcF9426Aef445c766314A"
       );
       let getvalue = contractInstance.methods.counter().call();
       getvalue.then((result) => {
