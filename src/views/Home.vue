@@ -150,7 +150,7 @@ export default {
           alert(error);
         });
     },
-    viewValue() {
+    async viewValue() {
     if (window.ethereum) {
     const web3 = new Web3(window.ethereum);
     try {
