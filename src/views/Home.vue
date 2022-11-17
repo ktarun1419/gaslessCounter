@@ -151,8 +151,12 @@ export default {
         });
     },
     viewValue() {
-      const web3 = new Web3(window.ethereum);
-      const contractInstance = new web3.eth.Contract(
+    if (window.ethereum) {
+    const web3 = new Web3(window.ethereum);
+    try {
+      // Request account access if needed
+      await window.ethereum.enable();
+       const contractInstance = new web3.eth.Contract(
         this.abiContract,
         "0xBc76CaA84D182D670E8b58CcB94e991d1241FB9e"
       );
@@ -160,6 +164,13 @@ export default {
       getvalue.then((result) => {
         this.viewvalue = result;
       });
+      // Accounts now exposed
+      return web3;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+     
     },
     async sign() {
       console.log(this.value);
